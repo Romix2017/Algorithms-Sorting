@@ -13,30 +13,46 @@ namespace SortingAlgorithms
 {
     public partial class Form1 : Form
     {
-
-        AlgorithmBase<int> algorithm = new BubbleSort<int>();
+        List<SortedItem> items = new List<SortedItem>();
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textBox1.Text, out int value))
+            if (int.TryParse(AddTextBox.Text, out int value))
             {
-                algorithm.Items.Add(value);
-                label1.Text += " " + value;
+                var item = new SortedItem(value);
+                items.Add(item);
+                panel5.Controls.Add(item.ProgressBar);
+                panel5.Controls.Add(item.Label);
             }
+
+            AddTextBox.Text = "";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AddRandom_Click(object sender, EventArgs e)
         {
-            algorithm.Sort();
 
-            foreach (var item in algorithm.Items)
+            if (int.TryParse(AddRandomTextBox.Text, out int value))
             {
-                label2.Text += " " + item;
+                var rnd = new Random();
+                for (int i = 0; i < value; i++)
+                {
+                    var item = new SortedItem(value);
+                    items.Add(item);
+                    panel5.Controls.Add(item.ProgressBar);
+                    panel5.Controls.Add(item.Label);
+                }
             }
+
+            AddRandomTextBox.Text = "";
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
