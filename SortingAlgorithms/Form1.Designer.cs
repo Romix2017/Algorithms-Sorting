@@ -39,6 +39,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.verticalProgressBar1 = new VerticalProgressBar.VerticalProgressBar();
+            this.BubbleSortBut = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -134,9 +135,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-1, 90);
+            this.label5.Location = new System.Drawing.Point(35, 90);
             this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 3;
             // 
@@ -154,9 +155,20 @@
             this.verticalProgressBar1.TabIndex = 0;
             this.verticalProgressBar1.Value = 50;
             // 
+            // BubbleSortBut
+            // 
+            this.BubbleSortBut.Location = new System.Drawing.Point(13, 151);
+            this.BubbleSortBut.Name = "BubbleSortBut";
+            this.BubbleSortBut.Size = new System.Drawing.Size(75, 23);
+            this.BubbleSortBut.TabIndex = 3;
+            this.BubbleSortBut.Text = "Bubble Sort";
+            this.BubbleSortBut.UseVisualStyleBackColor = true;
+            this.BubbleSortBut.Click += new System.EventHandler(this.BubbleSortBut_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1091, 560);
+            this.Controls.Add(this.BubbleSortBut);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -192,6 +204,7 @@
         private System.Windows.Forms.Panel panel5;
         private VerticalProgressBar.VerticalProgressBar verticalProgressBar1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button BubbleSortBut;
     }
 }
 
