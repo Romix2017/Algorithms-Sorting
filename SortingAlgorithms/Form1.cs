@@ -36,7 +36,6 @@ namespace SortingAlgorithms
         private void DrawItems(List<SortedItem> items)
         {
             panel5.Controls.Clear();
-            panel5.Refresh();
             foreach (var item in items)
             {
                 panel5.Controls.Add(item.ProgressBar);
