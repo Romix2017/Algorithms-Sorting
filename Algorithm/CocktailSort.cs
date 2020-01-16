@@ -18,11 +18,9 @@ namespace Algorithm
                 var sc = SwapCount;
                 for (int i = left; i < right; i++)
                 {
-                    if (Items[i].CompareTo(Items[i + 1]) == 1)
+                    if (Compare(Items[i], Items[i + 1]) == 1)
                     {
                         Swap(i, i + 1);
-
-                        CompareCount++;
                     }
                 }
                 right--;
@@ -32,7 +30,6 @@ namespace Algorithm
                     if (Items[i].CompareTo(Items[i - 1]) == -1)
                     {
                         Swap(i, i - 1);
-                        CompareCount++;
                     }
                 }
                 left++;

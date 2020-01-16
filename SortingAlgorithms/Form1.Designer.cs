@@ -40,6 +40,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.verticalProgressBar1 = new VerticalProgressBar.VerticalProgressBar();
             this.BubbleSortBut = new System.Windows.Forms.Button();
+            this.TimeLabel = new System.Windows.Forms.Label();
+            this.CompareLabel = new System.Windows.Forms.Label();
+            this.SwapLabel = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -157,7 +160,7 @@
             // 
             // BubbleSortBut
             // 
-            this.BubbleSortBut.Location = new System.Drawing.Point(13, 151);
+            this.BubbleSortBut.Location = new System.Drawing.Point(8, 137);
             this.BubbleSortBut.Name = "BubbleSortBut";
             this.BubbleSortBut.Size = new System.Drawing.Size(75, 23);
             this.BubbleSortBut.TabIndex = 3;
@@ -165,9 +168,39 @@
             this.BubbleSortBut.UseVisualStyleBackColor = true;
             this.BubbleSortBut.Click += new System.EventHandler(this.BubbleSortBut_Click);
             // 
+            // TimeLabel
+            // 
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.Location = new System.Drawing.Point(5, 163);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(30, 13);
+            this.TimeLabel.TabIndex = 4;
+            this.TimeLabel.Text = "Time";
+            // 
+            // CompareLabel
+            // 
+            this.CompareLabel.AutoSize = true;
+            this.CompareLabel.Location = new System.Drawing.Point(5, 176);
+            this.CompareLabel.Name = "CompareLabel";
+            this.CompareLabel.Size = new System.Drawing.Size(85, 13);
+            this.CompareLabel.TabIndex = 5;
+            this.CompareLabel.Text = "Qty comparisons";
+            // 
+            // SwapLabel
+            // 
+            this.SwapLabel.AutoSize = true;
+            this.SwapLabel.Location = new System.Drawing.Point(5, 193);
+            this.SwapLabel.Name = "SwapLabel";
+            this.SwapLabel.Size = new System.Drawing.Size(56, 13);
+            this.SwapLabel.TabIndex = 6;
+            this.SwapLabel.Text = "Qty swaps";
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1091, 560);
+            this.Controls.Add(this.SwapLabel);
+            this.Controls.Add(this.CompareLabel);
+            this.Controls.Add(this.TimeLabel);
             this.Controls.Add(this.BubbleSortBut);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -180,6 +213,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -205,6 +239,9 @@
         private VerticalProgressBar.VerticalProgressBar verticalProgressBar1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BubbleSortBut;
+        private System.Windows.Forms.Label TimeLabel;
+        private System.Windows.Forms.Label CompareLabel;
+        private System.Windows.Forms.Label SwapLabel;
     }
 }
 
