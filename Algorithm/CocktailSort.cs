@@ -8,11 +8,14 @@ namespace Algorithm
 {
     public class CocktailSort<T> : AlgorithmBase<T> where T : IComparable
     {
+        public CocktailSort(IEnumerable<T> items) : base(items)
+        {
+        }
+        public CocktailSort() { }
         protected override void MakeSort()
         {
             int left = 0;
             int right = Items.Count - 1;
-
             while (left < right)
             {
                 var sc = SwapCount;
@@ -24,7 +27,6 @@ namespace Algorithm
                     }
                 }
                 right--;
-
                 for (int i = right; i > left; i--)
                 {
                     if (Items[i].CompareTo(Items[i - 1]) == -1)
@@ -33,7 +35,6 @@ namespace Algorithm
                     }
                 }
                 left++;
-
                 if (sc == SwapCount)
                 {
                     break;

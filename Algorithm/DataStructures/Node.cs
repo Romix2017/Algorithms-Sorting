@@ -9,19 +9,14 @@ namespace Algorithm.DataStructures
     class Node<T> : IComparable where T : IComparable
     {
         public T Data { get; set; }
-
         public Node<T> Left { get; set; }
-
         public Node<T> Right { get; set; }
-
         public Node(T data)
         {
             Data = data;
         }
-
         public int CompareTo(object obj)
         {
-
             if (obj is Node<T> item)
             {
                 return Data.CompareTo(obj);
@@ -31,7 +26,6 @@ namespace Algorithm.DataStructures
                 throw new ArgumentException("Types are not equal");
             }
         }
-
         public void Add(T data)
         {
             var node = new Node<T>(data);
@@ -40,7 +34,6 @@ namespace Algorithm.DataStructures
                 if (Left == null)
                 {
                     Left = node;
-
                 }
                 else
                 {

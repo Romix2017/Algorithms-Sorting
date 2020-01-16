@@ -15,7 +15,6 @@ namespace SortingAlgorithms
         public int Value { get; private set; }
         public int Number { get; private set; }
         public int StartNumber { get; private set; }
-
         public SortedItem(int value, int number)
         {
             Value = value;
@@ -48,7 +47,6 @@ namespace SortingAlgorithms
             Label.TabIndex = number;
             Label.Text = Value.ToString();
         }
-
         public void SetPosition(int number)
         {
             Number = number;
@@ -58,7 +56,6 @@ namespace SortingAlgorithms
             Label.Location = new Point(x - 3, 90);
             Label.Name = "label" + number;
         }
-
         public void Refresh()
         {
             Number = StartNumber;
@@ -68,12 +65,10 @@ namespace SortingAlgorithms
             Label.Location = new Point(x - 3, 90);
             Label.Name = "label" + Number;
         }
-
         public void SetColor(Color color)
         {
             ProgressBar.Color = color;
         }
-
         public int CompareTo(object obj)
         {
             if (obj is SortedItem item)
@@ -85,7 +80,6 @@ namespace SortingAlgorithms
                 throw new ArgumentException($"obj is not {nameof(SortedItem)}", nameof(obj));
             }
         }
-
         public override string ToString()
         {
             return Value.ToString();

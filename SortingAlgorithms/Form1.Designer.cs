@@ -38,11 +38,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.verticalProgressBar1 = new VerticalProgressBar.VerticalProgressBar();
             this.BubbleSortBut = new System.Windows.Forms.Button();
             this.TimeLabel = new System.Windows.Forms.Label();
             this.CompareLabel = new System.Windows.Forms.Label();
             this.SwapLabel = new System.Windows.Forms.Label();
+            this.CocktailSortBut = new System.Windows.Forms.Button();
+            this.InsertSortBut = new System.Windows.Forms.Button();
+            this.verticalProgressBar1 = new VerticalProgressBar.VerticalProgressBar();
+            this.ShellSortBtn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -144,20 +147,6 @@
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 3;
             // 
-            // verticalProgressBar1
-            // 
-            this.verticalProgressBar1.BorderStyle = VerticalProgressBar.BorderStyles.Classic;
-            this.verticalProgressBar1.Color = System.Drawing.Color.Blue;
-            this.verticalProgressBar1.Location = new System.Drawing.Point(6, 21);
-            this.verticalProgressBar1.Maximum = 100;
-            this.verticalProgressBar1.Minimum = 0;
-            this.verticalProgressBar1.Name = "verticalProgressBar1";
-            this.verticalProgressBar1.Size = new System.Drawing.Size(0, 0);
-            this.verticalProgressBar1.Step = 1;
-            this.verticalProgressBar1.Style = VerticalProgressBar.Styles.Solid;
-            this.verticalProgressBar1.TabIndex = 0;
-            this.verticalProgressBar1.Value = 50;
-            // 
             // BubbleSortBut
             // 
             this.BubbleSortBut.Location = new System.Drawing.Point(8, 137);
@@ -195,9 +184,56 @@
             this.SwapLabel.TabIndex = 6;
             this.SwapLabel.Text = "Qty swaps";
             // 
+            // CocktailSortBut
+            // 
+            this.CocktailSortBut.Location = new System.Drawing.Point(89, 137);
+            this.CocktailSortBut.Name = "CocktailSortBut";
+            this.CocktailSortBut.Size = new System.Drawing.Size(75, 23);
+            this.CocktailSortBut.TabIndex = 7;
+            this.CocktailSortBut.Text = "Cocktail sort";
+            this.CocktailSortBut.UseVisualStyleBackColor = true;
+            this.CocktailSortBut.Click += new System.EventHandler(this.CocktailSortBut_Click);
+            // 
+            // InsertSortBut
+            // 
+            this.InsertSortBut.Location = new System.Drawing.Point(171, 137);
+            this.InsertSortBut.Name = "InsertSortBut";
+            this.InsertSortBut.Size = new System.Drawing.Size(75, 22);
+            this.InsertSortBut.TabIndex = 8;
+            this.InsertSortBut.Text = "Insert Sort";
+            this.InsertSortBut.UseVisualStyleBackColor = true;
+            this.InsertSortBut.Click += new System.EventHandler(this.InsertSortBut_Click);
+            // 
+            // verticalProgressBar1
+            // 
+            this.verticalProgressBar1.BorderStyle = VerticalProgressBar.BorderStyles.Classic;
+            this.verticalProgressBar1.Color = System.Drawing.Color.Blue;
+            this.verticalProgressBar1.Location = new System.Drawing.Point(6, 21);
+            this.verticalProgressBar1.Maximum = 100;
+            this.verticalProgressBar1.Minimum = 0;
+            this.verticalProgressBar1.Name = "verticalProgressBar1";
+            this.verticalProgressBar1.Size = new System.Drawing.Size(0, 0);
+            this.verticalProgressBar1.Step = 1;
+            this.verticalProgressBar1.Style = VerticalProgressBar.Styles.Solid;
+            this.verticalProgressBar1.TabIndex = 0;
+            this.verticalProgressBar1.Value = 50;
+            // 
+            // ShellSortBtn
+            // 
+            this.ShellSortBtn.Location = new System.Drawing.Point(253, 137);
+            this.ShellSortBtn.Name = "ShellSortBtn";
+            this.ShellSortBtn.Size = new System.Drawing.Size(75, 22);
+            this.ShellSortBtn.TabIndex = 9;
+            this.ShellSortBtn.Text = "Shell Sort";
+            this.ShellSortBtn.UseVisualStyleBackColor = true;
+            this.ShellSortBtn.Click += new System.EventHandler(this.ShellSortBtn_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1091, 560);
+            this.Controls.Add(this.ShellSortBtn);
+            this.Controls.Add(this.InsertSortBut);
+            this.Controls.Add(this.CocktailSortBut);
             this.Controls.Add(this.SwapLabel);
             this.Controls.Add(this.CompareLabel);
             this.Controls.Add(this.TimeLabel);
@@ -242,6 +278,9 @@
         private System.Windows.Forms.Label TimeLabel;
         private System.Windows.Forms.Label CompareLabel;
         private System.Windows.Forms.Label SwapLabel;
+        private System.Windows.Forms.Button CocktailSortBut;
+        private System.Windows.Forms.Button InsertSortBut;
+        private System.Windows.Forms.Button ShellSortBtn;
     }
 }
 

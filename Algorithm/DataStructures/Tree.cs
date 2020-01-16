@@ -9,9 +9,7 @@ namespace Algorithm.DataStructures
     class Tree<T> where T : IComparable
     {
         public Node<T> Root { get; private set; }
-
         public Tree() { }
-
         public Tree(IEnumerable<T> items)
         {
             foreach (var item in items)
@@ -19,13 +17,10 @@ namespace Algorithm.DataStructures
                 Add(item);
             }
         }
-
         public int Count { get; private set; }
-
         public void Add(T data)
         {
             var node = new Node<T>(data);
-
             if (Root == null)
             {
                 Root = new Node<T>(data);
@@ -35,7 +30,6 @@ namespace Algorithm.DataStructures
             Root.Add(data);
             Count++;
         }
-
         public List<T> Preorder()
         {
             if (Root == null)
@@ -44,7 +38,6 @@ namespace Algorithm.DataStructures
             }
             return Preorder(Root);
         }
-
         public List<T> PostOrder()
         {
             if (Root == null)
@@ -53,7 +46,6 @@ namespace Algorithm.DataStructures
             }
             return PostOrder(Root);
         }
-
         public List<T> InOrder()
         {
             if (Root == null)
@@ -62,19 +54,16 @@ namespace Algorithm.DataStructures
             }
             return InOrder(Root);
         }
-
         private List<T> Preorder(Node<T> node)
         {
             var list = new List<T>();
             if (node != null)
             {
                 list.Add(node.Data);
-
                 if (node.Left != null)
                 {
                     list.AddRange(Preorder(node.Left));
                 }
-
                 if (node.Right != null)
                 {
                     list.AddRange(Preorder(node.Right));
@@ -82,7 +71,6 @@ namespace Algorithm.DataStructures
             }
             return list;
         }
-
         private List<T> PostOrder(Node<T> node)
         {
             var list = new List<T>();
@@ -92,7 +80,6 @@ namespace Algorithm.DataStructures
                 {
                     list.AddRange(PostOrder(node.Left));
                 }
-
                 if (node.Right != null)
                 {
                     list.AddRange(PostOrder(node.Right));
@@ -101,7 +88,6 @@ namespace Algorithm.DataStructures
             }
             return list;
         }
-
         private List<T> InOrder(Node<T> node)
         {
             var list = new List<T>();
@@ -119,6 +105,5 @@ namespace Algorithm.DataStructures
             }
             return list;
         }
-
     }
 }
