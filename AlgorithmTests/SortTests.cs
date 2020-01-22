@@ -19,7 +19,7 @@ namespace Algorithm.Tests
         public void Init()
         {
             Items.Clear();
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 Items.Add(rnd.Next(0, 100));
             }
@@ -100,8 +100,7 @@ namespace Algorithm.Tests
         public void TreeSortTest()
         {
             // arrange
-            var tree = new TreeSort<int>();
-            tree.Items.AddRange(Items);
+            var tree = new Tree<int>(Items);
             // act
             tree.Sort();
             // assert
@@ -135,6 +134,20 @@ namespace Algorithm.Tests
             for (int i = 0; i < selection.Items.Count; i++)
             {
                 Assert.AreEqual(Sorted[i], selection.Items[i]);
+            }
+        }
+        [TestMethod()]
+        public void GnomeSortTest()
+        {
+            // arrange
+            var gnome = new GnomeSort<int>();
+            gnome.Items.AddRange(Items);
+            // act
+            gnome.Sort();
+            // assert
+            for (int i = 0; i < gnome.Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], gnome.Items[i]);
             }
         }
     }

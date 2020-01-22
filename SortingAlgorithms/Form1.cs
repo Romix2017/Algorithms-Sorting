@@ -76,7 +76,7 @@ namespace SortingAlgorithms
             e.Item1.SetPosition(e.Item2.Number);
             e.Item2.SetPosition(temp);
             panel5.Refresh();
-            Thread.Sleep(100);
+            Thread.Sleep(50);
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
             panel5.Refresh();
@@ -87,7 +87,7 @@ namespace SortingAlgorithms
             e.Item1.SetColor(Color.Red);
             e.Item2.SetColor(Color.Green);
             panel5.Refresh();
-            Thread.Sleep(100);
+            Thread.Sleep(50);
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
             panel5.Refresh();
@@ -141,8 +141,18 @@ namespace SortingAlgorithms
         private void HeapSortBtn_Click(object sender, EventArgs e)
         {
             var heap = new HeapClass<SortedItem>(items);
-
             Btn_Click(heap);
+        }
+        private void GnomeSortBut_Click(object sender, EventArgs e)
+        {
+            var gnome = new GnomeSort<SortedItem>(items);
+            Btn_Click(gnome);
+        }
+
+        private void TreeSortBtn_Click(object sender, EventArgs e)
+        {
+            var tree = new Tree<SortedItem>(items);
+            Btn_Click(tree);
         }
     }
 }

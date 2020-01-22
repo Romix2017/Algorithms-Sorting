@@ -48,6 +48,8 @@
             this.ShellSortBtn = new System.Windows.Forms.Button();
             this.SelectionSortBut = new System.Windows.Forms.Button();
             this.HeapSortBtn = new System.Windows.Forms.Button();
+            this.GnomeSortBut = new System.Windows.Forms.Button();
+            this.TreeSortBtn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -250,9 +252,31 @@
             this.HeapSortBtn.UseVisualStyleBackColor = true;
             this.HeapSortBtn.Click += new System.EventHandler(this.HeapSortBtn_Click);
             // 
+            // GnomeSortBut
+            // 
+            this.GnomeSortBut.Location = new System.Drawing.Point(512, 137);
+            this.GnomeSortBut.Name = "GnomeSortBut";
+            this.GnomeSortBut.Size = new System.Drawing.Size(75, 22);
+            this.GnomeSortBut.TabIndex = 12;
+            this.GnomeSortBut.Text = "Gnome Sort";
+            this.GnomeSortBut.UseVisualStyleBackColor = true;
+            this.GnomeSortBut.Click += new System.EventHandler(this.GnomeSortBut_Click);
+            // 
+            // TreeSortBtn
+            // 
+            this.TreeSortBtn.Location = new System.Drawing.Point(594, 137);
+            this.TreeSortBtn.Name = "TreeSortBtn";
+            this.TreeSortBtn.Size = new System.Drawing.Size(75, 22);
+            this.TreeSortBtn.TabIndex = 13;
+            this.TreeSortBtn.Text = "Tree Sort";
+            this.TreeSortBtn.UseVisualStyleBackColor = true;
+            this.TreeSortBtn.Click += new System.EventHandler(this.TreeSortBtn_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1091, 560);
+            this.Controls.Add(this.TreeSortBtn);
+            this.Controls.Add(this.GnomeSortBut);
             this.Controls.Add(this.HeapSortBtn);
             this.Controls.Add(this.SelectionSortBut);
             this.Controls.Add(this.ShellSortBtn);
@@ -307,6 +331,8 @@
         private System.Windows.Forms.Button ShellSortBtn;
         private System.Windows.Forms.Button SelectionSortBut;
         private System.Windows.Forms.Button HeapSortBtn;
+        private System.Windows.Forms.Button GnomeSortBut;
+        private System.Windows.Forms.Button TreeSortBtn;
     }
 }
 

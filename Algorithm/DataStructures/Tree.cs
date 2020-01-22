@@ -6,53 +6,67 @@ using System.Threading.Tasks;
 
 namespace Algorithm.DataStructures
 {
-    class Tree<T> where T : IComparable
+    public class Tree<T> : AlgorithmBase<T> where T : IComparable
     {
-        public Node<T> Root { get; private set; }
+        private Node<T> Root { get; set; }
         public Tree() { }
         public Tree(IEnumerable<T> items)
         {
-            foreach (var item in items)
+            var list = items.ToList();
+            for (int i = 0; i < Items.Count(); i++)
             {
-                Add(item);
+                var item = list[i];
+                Items.Add(item);
+                var node = new Node<T>(item, i);
+                Add(node);
             }
         }
         public int Count { get; private set; }
-        public void Add(T data)
+        private void Add(Node<T> node)
         {
-            var node = new Node<T>(data);
             if (Root == null)
             {
-                Root = new Node<T>(data);
+                Root = node;
                 Count = 1;
                 return;
             }
-            Root.Add(data);
+            Add(Root, node);
             Count++;
         }
-        public List<T> Preorder()
+        private void Add(Node<T> node, Node<T> newNode)
         {
-            if (Root == null)
+            if (Compare(node.Data, newNode.Data) == 1)
             {
-                return new List<T>();
+                if (node.Left == null)
+                {
+                    node.Left = newNode;
+                }
+                else
+                {
+                    Add(node.Left, newNode);
+                }
             }
-            return Preorder(Root);
+            else
+            {
+                if (node.Right == null)
+                {
+                    node.Right = newNode;
+                }
+                else
+                {
+                    Add(node.Right, newNode);
+                }
+            }
         }
-        public List<T> PostOrder()
+        protected override void MakeSort()
         {
-            if (Root == null)
+            var result = InOrder(Root);
+            Items.AddRange(result.Select(i => i.Data));
+            for (int i = 0; i < result.Count; i++)
             {
-                return new List<T>();
+                Swap(i, result.Count + i);
             }
-            return PostOrder(Root);
-        }
-        public List<T> InOrder()
-        {
-            if (Root == null)
-            {
-                return new List<T>();
-            }
-            return InOrder(Root);
+            Items.RemoveRange(result.Count, result.Count);
         }
         private List<T> Preorder(Node<T> node)
         {
@@ -88,16 +102,16 @@ namespace Algorithm.DataStructures
             }
             return list;
         }
-        private List<T> InOrder(Node<T> node)
+        private List<Node<T>> InOrder(Node<T> node)
         {
-            var list = new List<T>();
+            var list = new List<Node<T>>();
             if (node != null)
             {
                 if (node.Left != null)
                 {
                     list.AddRange(InOrder(node.Left));
                 }
-                list.Add(node.Data);
+                list.Add(node);
                 if (node.Right != null)
                 {
                     list.AddRange(InOrder(node.Right));
