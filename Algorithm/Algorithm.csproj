@@ -48,6 +48,8 @@
     <Compile Include="DataStructures\Node.cs" />
     <Compile Include="DataStructures\Tree.cs" />
     <Compile Include="GnomeSort.cs" />
+    <Compile Include="LsdRedixSort.cs" />
+    <Compile Include="MsdRedixSort.cs" />
     <Compile Include="SelectionSort.cs" />
     <Compile Include="InsertSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
