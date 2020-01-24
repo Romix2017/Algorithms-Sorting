@@ -12,6 +12,7 @@ namespace Algorithm
         public List<T> Items { get; set; } = new List<T>();
         public event EventHandler<Tuple<T, T>> CompareEvent;
         public event EventHandler<Tuple<T, T>> SwapEvent;
+        public event EventHandler<Tuple<int, T>> SetEvent;
         public AlgorithmBase(IEnumerable<T> items)
         {
             Items.AddRange(items);
@@ -36,6 +37,14 @@ namespace Algorithm
             MakeSort();
             timer.Stop();
             return timer.Elapsed;
+        }
+        protected void Set(int position, T item)
+        {
+            if (position < Items.Count)
+            {
+                SetEvent?.Invoke(this, new Tuple<int, T>(position, item));
+                Items[position] = item;
+            }
         }
         protected virtual void MakeSort()
         {

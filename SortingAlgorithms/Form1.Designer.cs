@@ -38,7 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.verticalProgressBar1 = new VerticalProgressBar.VerticalProgressBar();
             this.BubbleSortBut = new System.Windows.Forms.Button();
             this.TimeLabel = new System.Windows.Forms.Label();
             this.CompareLabel = new System.Windows.Forms.Label();
@@ -50,6 +49,10 @@
             this.HeapSortBtn = new System.Windows.Forms.Button();
             this.GnomeSortBut = new System.Windows.Forms.Button();
             this.TreeSortBtn = new System.Windows.Forms.Button();
+            this.LsdRedixSortBtn = new System.Windows.Forms.Button();
+            this.MsdRedixBut = new System.Windows.Forms.Button();
+            this.verticalProgressBar1 = new VerticalProgressBar.VerticalProgressBar();
+            this.MergeSortBut = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -150,20 +153,6 @@
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 3;
-            // 
-            // verticalProgressBar1
-            // 
-            this.verticalProgressBar1.BorderStyle = VerticalProgressBar.BorderStyles.Classic;
-            this.verticalProgressBar1.Color = System.Drawing.Color.Blue;
-            this.verticalProgressBar1.Location = new System.Drawing.Point(6, 21);
-            this.verticalProgressBar1.Maximum = 100;
-            this.verticalProgressBar1.Minimum = 0;
-            this.verticalProgressBar1.Name = "verticalProgressBar1";
-            this.verticalProgressBar1.Size = new System.Drawing.Size(0, 0);
-            this.verticalProgressBar1.Step = 1;
-            this.verticalProgressBar1.Style = VerticalProgressBar.Styles.Solid;
-            this.verticalProgressBar1.TabIndex = 0;
-            this.verticalProgressBar1.Value = 50;
             // 
             // BubbleSortBut
             // 
@@ -272,9 +261,56 @@
             this.TreeSortBtn.UseVisualStyleBackColor = true;
             this.TreeSortBtn.Click += new System.EventHandler(this.TreeSortBtn_Click);
             // 
+            // LsdRedixSortBtn
+            // 
+            this.LsdRedixSortBtn.Location = new System.Drawing.Point(676, 137);
+            this.LsdRedixSortBtn.Name = "LsdRedixSortBtn";
+            this.LsdRedixSortBtn.Size = new System.Drawing.Size(93, 22);
+            this.LsdRedixSortBtn.TabIndex = 14;
+            this.LsdRedixSortBtn.Text = "LsdRedix Sort";
+            this.LsdRedixSortBtn.UseVisualStyleBackColor = true;
+            this.LsdRedixSortBtn.Click += new System.EventHandler(this.LsdRedixSortBtn_Click);
+            // 
+            // MsdRedixBut
+            // 
+            this.MsdRedixBut.Location = new System.Drawing.Point(776, 137);
+            this.MsdRedixBut.Name = "MsdRedixBut";
+            this.MsdRedixBut.Size = new System.Drawing.Size(82, 22);
+            this.MsdRedixBut.TabIndex = 15;
+            this.MsdRedixBut.Text = "MsdRedixSort";
+            this.MsdRedixBut.UseVisualStyleBackColor = true;
+            this.MsdRedixBut.Click += new System.EventHandler(this.MsdRedixBut_Click);
+            // 
+            // verticalProgressBar1
+            // 
+            this.verticalProgressBar1.BorderStyle = VerticalProgressBar.BorderStyles.Classic;
+            this.verticalProgressBar1.Color = System.Drawing.Color.Blue;
+            this.verticalProgressBar1.Location = new System.Drawing.Point(6, 21);
+            this.verticalProgressBar1.Maximum = 100;
+            this.verticalProgressBar1.Minimum = 0;
+            this.verticalProgressBar1.Name = "verticalProgressBar1";
+            this.verticalProgressBar1.Size = new System.Drawing.Size(0, 0);
+            this.verticalProgressBar1.Step = 1;
+            this.verticalProgressBar1.Style = VerticalProgressBar.Styles.Solid;
+            this.verticalProgressBar1.TabIndex = 0;
+            this.verticalProgressBar1.Value = 50;
+            // 
+            // MergeSortBut
+            // 
+            this.MergeSortBut.Location = new System.Drawing.Point(865, 137);
+            this.MergeSortBut.Name = "MergeSortBut";
+            this.MergeSortBut.Size = new System.Drawing.Size(75, 21);
+            this.MergeSortBut.TabIndex = 16;
+            this.MergeSortBut.Text = "Merge Sort";
+            this.MergeSortBut.UseVisualStyleBackColor = true;
+            this.MergeSortBut.Click += new System.EventHandler(this.MergeSortBut_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1091, 560);
+            this.Controls.Add(this.MergeSortBut);
+            this.Controls.Add(this.MsdRedixBut);
+            this.Controls.Add(this.LsdRedixSortBtn);
             this.Controls.Add(this.TreeSortBtn);
             this.Controls.Add(this.GnomeSortBut);
             this.Controls.Add(this.HeapSortBtn);
@@ -333,6 +369,9 @@
         private System.Windows.Forms.Button HeapSortBtn;
         private System.Windows.Forms.Button GnomeSortBut;
         private System.Windows.Forms.Button TreeSortBtn;
+        private System.Windows.Forms.Button LsdRedixSortBtn;
+        private System.Windows.Forms.Button MsdRedixBut;
+        private System.Windows.Forms.Button MergeSortBut;
     }
 }
 

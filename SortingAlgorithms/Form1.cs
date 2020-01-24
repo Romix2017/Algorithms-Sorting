@@ -66,7 +66,7 @@ namespace SortingAlgorithms
         {
         }
 
-        private void Algorithm_SwapEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        private void AlgorithmSwapEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             e.Item1.SetColor(Color.Aqua);
             e.Item2.SetColor(Color.Brown);
@@ -82,13 +82,24 @@ namespace SortingAlgorithms
             panel5.Refresh();
             Thread.Sleep(20);
         }
-        private void Algorithm_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        private void AlgorithmCompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             e.Item1.SetColor(Color.Red);
             e.Item2.SetColor(Color.Green);
             panel5.Refresh();
             Thread.Sleep(50);
             e.Item1.SetColor(Color.Blue);
+            e.Item2.SetColor(Color.Blue);
+            panel5.Refresh();
+            Thread.Sleep(20);
+        }
+        private void AlgorithmSetEvent(object sender, Tuple<int, SortedItem> e)
+        {
+            e.Item2.SetColor(Color.Red);
+            panel5.Refresh();
+            Thread.Sleep(20);
+            e.Item2.SetPosition(e.Item1);
+            Thread.Sleep(20);
             e.Item2.SetColor(Color.Blue);
             panel5.Refresh();
             Thread.Sleep(20);
@@ -106,8 +117,9 @@ namespace SortingAlgorithms
                 algorithm.Items[i].SetPosition(i);
             }
             panel5.Refresh();
-            algorithm.CompareEvent += Algorithm_CompareEvent;
-            algorithm.SwapEvent += Algorithm_SwapEvent;
+            algorithm.CompareEvent += AlgorithmCompareEvent;
+            algorithm.SwapEvent += AlgorithmSwapEvent;
+            algorithm.SetEvent += AlgorithmSetEvent;
             var time = algorithm.Sort();
             TimeLabel.Text = "Time: " + time.Seconds;
             SwapLabel.Text = "Qty swaps: " + algorithm.SwapCount;
@@ -148,11 +160,25 @@ namespace SortingAlgorithms
             var gnome = new GnomeSort<SortedItem>(items);
             Btn_Click(gnome);
         }
-
         private void TreeSortBtn_Click(object sender, EventArgs e)
         {
             var tree = new Tree<SortedItem>(items);
             Btn_Click(tree);
+        }
+        private void LsdRedixSortBtn_Click(object sender, EventArgs e)
+        {
+            var lsd = new LsdRedixSort<SortedItem>(items);
+            Btn_Click(lsd);
+        }
+        private void MsdRedixBut_Click(object sender, EventArgs e)
+        {
+            var msd = new MsdRedixSort<SortedItem>(items);
+            Btn_Click(msd);
+        }
+        private void MergeSortBut_Click(object sender, EventArgs e)
+        {
+            var merge = new MergeSort<SortedItem>(items);
+            Btn_Click(merge);
         }
     }
 }

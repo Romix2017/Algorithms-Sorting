@@ -13,7 +13,7 @@ namespace Algorithm.DataStructures
         public Tree(IEnumerable<T> items)
         {
             var list = items.ToList();
-            for (int i = 0; i < Items.Count(); i++)
+            for (int i = 0; i < items.Count(); i++)
             {
                 var item = list[i];
                 Items.Add(item);
@@ -60,13 +60,11 @@ namespace Algorithm.DataStructures
         }
         protected override void MakeSort()
         {
-            var result = InOrder(Root);
-            Items.AddRange(result.Select(i => i.Data));
+            var result = InOrder(Root).Select(r => r.Data).ToList();
             for (int i = 0; i < result.Count; i++)
             {
-                Swap(i, result.Count + i);
+                Set(i, result[i]);
             }
-            Items.RemoveRange(result.Count, result.Count);
         }
         private List<T> Preorder(Node<T> node)
         {

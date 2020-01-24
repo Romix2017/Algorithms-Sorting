@@ -26,12 +26,13 @@ namespace Algorithm
                     var value = i % (int)Math.Pow(10, step + 1) / (int)Math.Pow(10, step);
                     groups[value].Add(item);
                 }
-                Items.Clear();
+                var j = 0;
                 foreach (var group in groups)
                 {
                     foreach (var item in group)
                     {
-                        Items.Add(item);
+                        Set(j, item);
+                        j++;
                     }
                 }
                 foreach (var group in groups)
