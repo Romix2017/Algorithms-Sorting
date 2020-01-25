@@ -15,7 +15,8 @@ namespace SortingAlgorithms
 {
     public partial class Form1 : Form
     {
-        List<SortedItem> items = new List<SortedItem>();
+        private List<SortedItem> items = new List<SortedItem>();
+        private const int SLEEP = 50;
         public Form1()
         {
             InitializeComponent();
@@ -71,7 +72,7 @@ namespace SortingAlgorithms
             e.Item1.SetColor(Color.Aqua);
             e.Item2.SetColor(Color.Brown);
             panel5.Refresh();
-            Thread.Sleep(20);
+            Thread.Sleep(SLEEP);
             var temp = e.Item1.Number;
             e.Item1.SetPosition(e.Item2.Number);
             e.Item2.SetPosition(temp);
@@ -80,7 +81,7 @@ namespace SortingAlgorithms
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
             panel5.Refresh();
-            Thread.Sleep(20);
+            Thread.Sleep(SLEEP);
         }
         private void AlgorithmCompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
@@ -91,18 +92,18 @@ namespace SortingAlgorithms
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
             panel5.Refresh();
-            Thread.Sleep(20);
+            Thread.Sleep(SLEEP);
         }
         private void AlgorithmSetEvent(object sender, Tuple<int, SortedItem> e)
         {
             e.Item2.SetColor(Color.Red);
             panel5.Refresh();
-            Thread.Sleep(20);
+            Thread.Sleep(SLEEP);
             e.Item2.SetPosition(e.Item1);
-            Thread.Sleep(20);
+            Thread.Sleep(SLEEP);
             e.Item2.SetColor(Color.Blue);
             panel5.Refresh();
-            Thread.Sleep(20);
+            Thread.Sleep(SLEEP);
         }
         private void Swap(SortedItem a, SortedItem b)
         {
@@ -179,6 +180,11 @@ namespace SortingAlgorithms
         {
             var merge = new MergeSort<SortedItem>(items);
             Btn_Click(merge);
+        }
+        private void QuickSortBtn_Click(object sender, EventArgs e)
+        {
+            var quick = new QuickSort<SortedItem>(items);
+            Btn_Click(quick);
         }
     }
 }

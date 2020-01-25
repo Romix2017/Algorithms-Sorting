@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.verticalProgressBar1 = new VerticalProgressBar.VerticalProgressBar();
             this.BubbleSortBut = new System.Windows.Forms.Button();
             this.TimeLabel = new System.Windows.Forms.Label();
             this.CompareLabel = new System.Windows.Forms.Label();
@@ -51,8 +52,8 @@
             this.TreeSortBtn = new System.Windows.Forms.Button();
             this.LsdRedixSortBtn = new System.Windows.Forms.Button();
             this.MsdRedixBut = new System.Windows.Forms.Button();
-            this.verticalProgressBar1 = new VerticalProgressBar.VerticalProgressBar();
             this.MergeSortBut = new System.Windows.Forms.Button();
+            this.QuickSortBtn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -153,6 +154,20 @@
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 3;
+            // 
+            // verticalProgressBar1
+            // 
+            this.verticalProgressBar1.BorderStyle = VerticalProgressBar.BorderStyles.Classic;
+            this.verticalProgressBar1.Color = System.Drawing.Color.Blue;
+            this.verticalProgressBar1.Location = new System.Drawing.Point(6, 21);
+            this.verticalProgressBar1.Maximum = 100;
+            this.verticalProgressBar1.Minimum = 0;
+            this.verticalProgressBar1.Name = "verticalProgressBar1";
+            this.verticalProgressBar1.Size = new System.Drawing.Size(0, 0);
+            this.verticalProgressBar1.Step = 1;
+            this.verticalProgressBar1.Style = VerticalProgressBar.Styles.Solid;
+            this.verticalProgressBar1.TabIndex = 0;
+            this.verticalProgressBar1.Value = 50;
             // 
             // BubbleSortBut
             // 
@@ -281,20 +296,6 @@
             this.MsdRedixBut.UseVisualStyleBackColor = true;
             this.MsdRedixBut.Click += new System.EventHandler(this.MsdRedixBut_Click);
             // 
-            // verticalProgressBar1
-            // 
-            this.verticalProgressBar1.BorderStyle = VerticalProgressBar.BorderStyles.Classic;
-            this.verticalProgressBar1.Color = System.Drawing.Color.Blue;
-            this.verticalProgressBar1.Location = new System.Drawing.Point(6, 21);
-            this.verticalProgressBar1.Maximum = 100;
-            this.verticalProgressBar1.Minimum = 0;
-            this.verticalProgressBar1.Name = "verticalProgressBar1";
-            this.verticalProgressBar1.Size = new System.Drawing.Size(0, 0);
-            this.verticalProgressBar1.Step = 1;
-            this.verticalProgressBar1.Style = VerticalProgressBar.Styles.Solid;
-            this.verticalProgressBar1.TabIndex = 0;
-            this.verticalProgressBar1.Value = 50;
-            // 
             // MergeSortBut
             // 
             this.MergeSortBut.Location = new System.Drawing.Point(865, 137);
@@ -305,9 +306,20 @@
             this.MergeSortBut.UseVisualStyleBackColor = true;
             this.MergeSortBut.Click += new System.EventHandler(this.MergeSortBut_Click);
             // 
+            // QuickSortBtn
+            // 
+            this.QuickSortBtn.Location = new System.Drawing.Point(946, 137);
+            this.QuickSortBtn.Name = "QuickSortBtn";
+            this.QuickSortBtn.Size = new System.Drawing.Size(75, 21);
+            this.QuickSortBtn.TabIndex = 17;
+            this.QuickSortBtn.Text = "Quick Sort";
+            this.QuickSortBtn.UseVisualStyleBackColor = true;
+            this.QuickSortBtn.Click += new System.EventHandler(this.QuickSortBtn_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1091, 560);
+            this.Controls.Add(this.QuickSortBtn);
             this.Controls.Add(this.MergeSortBut);
             this.Controls.Add(this.MsdRedixBut);
             this.Controls.Add(this.LsdRedixSortBtn);
@@ -372,6 +384,7 @@
         private System.Windows.Forms.Button LsdRedixSortBtn;
         private System.Windows.Forms.Button MsdRedixBut;
         private System.Windows.Forms.Button MergeSortBut;
+        private System.Windows.Forms.Button QuickSortBtn;
     }
 }
 
